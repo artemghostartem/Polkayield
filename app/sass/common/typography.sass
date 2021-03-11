@@ -14,19 +14,35 @@
 
 // title h1
 @mixin title-h1
-	@include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-h1), var(--font-weight-5), var(--letter-spacing), var(--line-height-h1))
+	@include mixed-lbl(var(--color-black), var(--sub-font), var(--font-size-h1), var(--font-weight-5), var(--letter-spacing), var(--line-height-h1))
 
 // title h2
 @mixin title-h2
-	@include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-h2), var(--font-weight-5), var(--letter-spacing), var(--line-height-h2))
+	@include mixed-lbl(var(--color-black), var(--sub-font), var(--font-size-h2), var(--font-weight-5), var(--letter-spacing), var(--line-height-h2))
 
-// label1
-@mixin label-1
-	@include mixed-lbl(var(--color-white), var(--sub-font), var(--font-size-label1), var(--font-weight-5), var(--letter-spacing), var(--line-height-label-1))
+// menu
+@mixin menu-1
+	@include mixed-lbl(var(--color-black), var(--main-font), var(--font-size-menu-1), var(--font-weight-4), var(--letter-spacing), var(--line-height-menu-1))
+
+// button-1
+@mixin button-1
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-button-1), var(--font-weight-6), var(--letter-spacing), var(--line-height-button-1))
+
+// button-1
+@mixin button-2
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-button-2), var(--font-weight-6), var(--letter-spacing), var(--line-height-button-2))
 
 //desc-1
 @mixin desc-1
-	@include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc1), var(--font-weight-4), var(--letter-spacing), var(--line-height-desc1))
+	@include mixed-lbl(var(--color-black), var(--main-font), var(--font-size-desc1), var(--font-weight-4), var(--letter-spacing), var(--line-height-desc1))
+
+//desc-2
+@mixin desc-2
+    @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc2), var(--font-weight-4), var(--letter-spacing), var(--line-height-desc2))
+
+//label-1
+@mixin label-1
+    @include mixed-lbl(var(--color-black), var(--main-font), var(--font-size-label-1), var(--font-weight-5), var(--letter-spacing), var(--line-height-label-1))
 
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -56,8 +72,20 @@ article, footer, header, nav, section, input, textarea, button
     &.title-h2
         @include title-h2
 
-    &.label-1
-        @include label-1
+    &.menu-1
+        @include menu-1
+
+    &.button-1
+        @include button-1
+
+    &.button-2
+        @include button-2
 
     &.desc-1
         @include desc-1
+
+    &.desc-2
+        @include desc-2
+
+    &.label-1
+        @include label-1

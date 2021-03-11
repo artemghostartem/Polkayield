@@ -118,11 +118,189 @@ button[type='submit']
 
 //start here
 
-main
-    background: #101010
-    width: 100%
-    height: 100vh
+.header
     display: flex
-    flex-direction: row
+    width: 100%
+    height: gem(90)
+    align-items: center
+    position: fixed
+    top: 0
+    z-index: 10
+    &-all
+        display: flex
+        justify-content: space-between
+        width: 100%
+        align-items: center
+        position: relative
+        &-logo
+            display: flex
+            width: gem(141)
+            height: auto
+            img
+                width: gem(141)
+                height: auto
+        &-links
+            display: flex
+            a
+                margin-right: gem(52)
+            a:last-child
+                margin-right: 0
+        &-button
+            display: flex
+            width: gem(93)
+            height: gem(37)
+            justify-content: center
+            align-items: center
+            background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            border-radius: gem(100)
+    &-line
+        display: flex
+        position: absolute
+        bottom: 0
+        width: 100%
+        &-main
+            display: flex
+            width: 100%
+            height: gem(1)
+            background: linear-gradient(270deg, #FFFFFF 1.52%, #FFFFFF 41.07%, #E6E6FF 64.81%)
+            border-radius: gem(10)
+
+section
+    z-index: 5
+
+.button
+    display: flex
+    width: gem(180)
+    height: gem(64)
     justify-content: center
     align-items: center
+    background: linear-gradient(180deg, #9268E9 0%, #735CFF 100%)
+    border-radius: gem(10)
+    a
+        letter-spacing: gem(1)
+
+// opening
+
+.opening
+    display: flex
+    padding-top: gem(215)
+    width: gem(100%)
+    height: gem(810)
+    background: linear-gradient(107.56deg, #FEFFFF 0%, #F0EDF1 100%)
+    &-text
+        max-width: gem(600)
+        padding-left: gem(180)
+        padding-bottom: gem(272)
+        position: relative
+        h1.title-h1
+            display: flex
+            flex-wrap: wrap
+            color: var(--color-grey)
+            span
+                display: flex
+                color: var(--color-black)
+        p.desc-1
+            max-width: gem(597)
+            margin-top: gem(16)
+            margin-bottom: gem(46)
+        &-scroll
+            display: flex
+            position: absolute
+            align-items: center
+            bottom: 0
+            left: 0
+            &-circle
+                display: flex
+                justify-content: center
+                align-items: center
+                width: gem(60)
+                height: gem(60)
+                border-radius: gem(30)
+                background: var(--color-white)
+                opacity: 0.6
+                box-shadow: 0 gem(10) gem(20) rgba(68, 83, 126, 0.1)
+                border-radius: gem(30)
+                margin-right: gem(12)
+                cursor: pointer
+                &-core
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: gem(48)
+                    height: gem(48)
+                    border-radius: gem(24)
+                    background: var(--color-white)
+                    box-shadow: 0 gem(10) gem(20) rgba(68, 83, 126, 0.1)
+                    border-radius: gem(100)
+            &-text
+                display: flex
+                cursor: pointer
+                span
+                    color: var(--color-grey)
+
+// leveraged
+
+.leveraged
+    background: linear-gradient(107.56deg, #FEFFFF 0%, #F0EDF1 100%)
+    &-text
+        display: flex
+        justify-content: flex-end
+        width: gem(100%)
+        &-main
+            display: flex
+            flex-direction: column
+            width: gem(660)
+            height: gem(810)
+            padding-left: gem(120)
+            padding-right: gem(60)
+            background: var(--color-purple)
+            h2.title-h2
+                margin-top: gem(223)
+                color: var(--color-white)
+                span
+                    display: flex
+                    color: var(--color-light-blue)
+            p.desc-1
+                margin-top: gem(16)
+                margin-bottom: gem(18)
+                max-width: gem(415)
+                color: var(--color-white)
+
+// book
+
+.book
+    display: flex
+    flex-direction: column
+    &-first, &-last
+        display: flex
+        
+        margin-right: gem(102)
+    &-first
+        .book-text
+            padding-top: gem(256)
+            background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            h2.title-h2
+                background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                font-size: gem(15)
+                font-family: var(--main-font)
+                font-weight: 600
+                line-height: gem(18)
+                letter-spacing: gem(1.5)
+
+    &-text
+        display: flex
+        flex-direction: column
+        width: gem(660)
+        padding: gem(180) gem(90) gem(180) gem(120)
+        p.desc-2
+            margin-top: gem(20)
+    &-pics
+        display: flex
+        width: gem(810)
+        &-list
+            display: flex
+            flex-direction: column
+
+
