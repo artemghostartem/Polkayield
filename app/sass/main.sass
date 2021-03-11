@@ -126,6 +126,26 @@ button[type='submit']
     position: fixed
     top: 0
     z-index: 10
+    backdrop-filter: blur(gem(86))
+    transition: all 0.75s ease
+    &.light
+        a.button-1
+            color: #745DFF
+        .header-all-button
+            background: #ffffff
+            transition: all 0.75s ease
+        .header-all-links
+            a:last-child 
+                color: #ffffff
+        .header-line-main
+            width: 100%
+    &.dark
+        .header-all-links
+            a
+                &:nth-child(1), &:nth-child(2)
+                    color: #fff
+            a:last-child 
+                color: #5B637C
     &-all
         display: flex
         justify-content: space-between
@@ -136,6 +156,7 @@ button[type='submit']
             display: flex
             width: gem(141)
             height: auto
+            transition: all 0.75s ease
             img
                 width: gem(141)
                 height: auto
@@ -143,6 +164,7 @@ button[type='submit']
             display: flex
             a
                 margin-right: gem(52)
+                transition: all 0.75s ease
             a:last-child
                 margin-right: 0
         &-button
@@ -151,22 +173,40 @@ button[type='submit']
             height: gem(37)
             justify-content: center
             align-items: center
-            background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            background: #313133
             border-radius: gem(100)
+            transition: all 0.75s ease
+            a
+                transition: all 0.75s ease
     &-line
         display: flex
+        justify-content: center
+        align-items: center
         position: absolute
         bottom: 0
         width: 100%
         &-main
             display: flex
-            width: 100%
+            width: gem(1320)
             height: gem(1)
+            transition: all 0.3s ease
             background: linear-gradient(270deg, #FFFFFF 1.52%, #FFFFFF 41.07%, #E6E6FF 64.81%)
             border-radius: gem(10)
 
+
+//custom scroll core
+body
+    height: 3200vh
 section
     z-index: 5
+    opacity: 1
+    width: 100%
+    transition: all 0.75s ease
+    position: fixed
+    top: 0
+    &.invisible
+        opacity: 0
+        z-index: 4
 
 .button
     display: flex
@@ -183,15 +223,34 @@ section
 
 .opening
     display: flex
-    padding-top: gem(215)
+    // padding-top: gem(215)
     width: gem(100%)
-    height: gem(810)
+    height: 100vh
     background: linear-gradient(107.56deg, #FEFFFF 0%, #F0EDF1 100%)
+    opacity: 1
+    transition: all 0.3s ease
+    &.phase_one
+        h1, p.desc-1
+            opacity: 1
+            transform: translateX(0)
+    &.phase_two
+        .button
+            opacity: 1
+            transform: translateX(0)
+
+    &-inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 100vh
     &-text
         max-width: gem(600)
-        padding-left: gem(180)
-        padding-bottom: gem(272)
-        position: relative
+        padding-left: gem(123)
+        margin-top: gem(-60)
+        h1, p.desc-1, .button
+            // transition: all 0.5s ease
+            opacity: 0
+            transform: translateX(gem(-40))
         h1.title-h1
             display: flex
             flex-wrap: wrap
@@ -207,8 +266,9 @@ section
             display: flex
             position: absolute
             align-items: center
-            bottom: 0
+            bottom: gem(45)
             left: 0
+            cursor: pointer
             &-circle
                 display: flex
                 justify-content: center
@@ -232,6 +292,8 @@ section
                     background: var(--color-white)
                     box-shadow: 0 gem(10) gem(20) rgba(68, 83, 126, 0.1)
                     border-radius: gem(100)
+                    img
+                        width: gem(12)
             &-text
                 display: flex
                 cursor: pointer
@@ -246,39 +308,53 @@ section
         display: flex
         justify-content: flex-end
         width: gem(100%)
+        height: 100vh
         &-main
             display: flex
             flex-direction: column
+            justify-content: center
             width: gem(660)
-            height: gem(810)
+            height: 0
             padding-left: gem(120)
             padding-right: gem(60)
+            position: absolute
+            right: 0
+            bottom: 0
             background: var(--color-purple)
+            // transition: all 0.75s ease
             h2.title-h2
-                margin-top: gem(223)
                 color: var(--color-white)
                 span
                     display: flex
                     color: var(--color-light-blue)
+                // transition: all 0.5s ease
+                opacity: 0
+                transform: translateX(gem(40))
             p.desc-1
                 margin-top: gem(16)
                 margin-bottom: gem(18)
                 max-width: gem(415)
                 color: var(--color-white)
+                // transition: all 0.5s ease
+                opacity: 0
+                transform: translateX(gem(40))
 
 // book
-
 .book
     display: flex
     flex-direction: column
-    &-first, &-last
-        display: flex
-        
-        margin-right: gem(102)
     &-first
+        display: flex
+    &-first
+        height: 100vh
+        width: 100%
+        display: flex
         .book-text
-            padding-top: gem(256)
-            background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            background: linear-gradient(180deg, rgba(49, 49, 51, 1) 0%, rgba(27, 28, 33, 1) 100%)
+            position: absolute
+            height: 0
+            bottom: 0
+            left: 0
             h2.title-h2
                 background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
                 -webkit-background-clip: text
@@ -288,19 +364,112 @@ section
                 font-weight: 600
                 line-height: gem(18)
                 letter-spacing: gem(1.5)
+                opacity: 0
+                transform: translateX(gem(-40))
+            p
+                opacity: 0
+                transform: translateX(gem(-40))
 
     &-text
         display: flex
         flex-direction: column
-        width: gem(660)
-        padding: gem(180) gem(90) gem(180) gem(120)
+        justify-content: center
+        width: 45%
+        padding: gem(0) gem(90) gem(0) gem(120)
         p.desc-2
             margin-top: gem(20)
+            &:nth-child(3)
+                display: none
     &-pics
         display: flex
         width: gem(810)
+        height: 100vh
+        position: absolute
+        right: 0
         &-list
             display: flex
             flex-direction: column
+            justify-content: center
+            align-items: center
+            width: 100%
+            li
+                opacity: 0
+                transform: translateX(gem(-40))
 
+//smart
+.smart
+    display: flex
+    &-text
+        background: linear-gradient(135deg, #EBF9FF 25%, #F6F5FE 75%)
+        width: 45%
+        height: 100vh
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        p
+            opacity: 0
+            transform: translateX(gem(-40))
+            max-width: gem(450)
+        .poly-block
+            position: absolute
+            width: 100%
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            display: none
+            p
+                opacity: 1
+                transform: none
+            .smart-img
+                mix-blend-mode: multiply
+                position: absolute
+                width: gem(1023)
+                transform: scale(2.5) translateY(gem(450))
+                margin-left: gem(-250)
+                opacity: 0
+            .points
+                display: flex
+                width: 100%
+                flex-wrap: wrap
+                position: absolute
+                .point
+                    width: 49%
+                    display: flex
+                    opacity: 0
+                    transform: translateY(gem(-40))
+                    img
+                        width: gem(40)
+                        height: gem(40)
+                        margin-right: gem(20)
+                    &:first-child, &:last-child
+                        width: 100%
+                        justify-content: center
+                    &-text
+                        display: flex
+                        flex-direction: column
+        .poly-text
+            opacity: 0 
+            transform: translateY(gem(-40))
 
+        h2
+            opacity: 0
+            transform: translateY(gem(-40))
+    &-book
+        display: flex
+        width: 100
+        flex-direction: row
+    &-pics
+        width: gem(810)
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        top: 0
+        height: 100vh
+        position: absolute
+        right: 0
+        &-list
+            li
+                opacity: 0
+                transform: translateX(gem(-40))
