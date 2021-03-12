@@ -287,6 +287,7 @@ $(function() {
 			console.log('power invisible')	
         } else if (scrollFromTop > scrollPoint * 6 && !power.classList.contains('invisible') && scrollFromTop < scrollPoint * 7 && powerPhase != 2) {
         	//to second part
+            console.log('to secon part')
         	TweenMax.to(powerTitle, 0.3, { opacity: 0, x: 40, delay: 0})
             TweenMax.to(powetText[0], 0.3, { opacity: 0, x: 40, delay: 0.15 })
             TweenMax.to(powetText[1], 0.3, { opacity: 0, x: 40, delay: 0.3 })
@@ -378,18 +379,19 @@ $(function() {
         }
     }
 
-    function next() {
-        currentScreen = currentScreen + 1
-        inProgress = true
-        let nextScrollPosition = scrollPoint * currentScreen
-        TweenMax.to(window, { duration: 2, scrollTo: nextScrollPosition, onComplete: () => { inProgress = false; } });
-    }
-
-    function inprogressFalse() {
+     function inprogressFalse() {
         setTimeout(function() {
             inProgress = false;
         }, 2000)
     }
+    function next() {
+        currentScreen = currentScreen + 1
+        inProgress = true
+        let nextScrollPosition = scrollPoint * currentScreen
+        TweenMax.to(window, { duration: 0, scrollTo: nextScrollPosition, onComplete: () => { inprogressFalse() } });
+    }
+
+   
 
     function prev() {
         currentScreen = currentScreen - 1
@@ -451,7 +453,6 @@ $(function() {
         TweenMax.set(secondPartText, {clearProps:"all"});
         TweenMax.set(secondPartTitle, {clearProps:"all"});
         TweenMax.set(powerBackground, {clearProps:"all"});
-
         for( let i = 0; i < 2; i++) {
             TweenMax.set(powetText[i], {clearProps:"all"});
         }

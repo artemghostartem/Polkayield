@@ -208,7 +208,9 @@ section
     transition: all 0.75s ease
     position: fixed
     top: 0
+    pointer-events: unset
     &.invisible
+        pointer-events: none
         opacity: 0
         z-index: 4
 
@@ -473,36 +475,79 @@ section
                 position: absolute
                 width: gem(1023)
                 transform: scale(2.5) translateY(gem(450))
-                margin-left: gem(-250)
+                margin-left: gem(-140)
                 opacity: 0
             .points
                 display: flex
                 width: gem(1200)
                 flex-wrap: wrap
-                justify-content: space-between
                 position: absolute
-                top: 0
+                top: gem(-230)
+                left: gem(120)
                 .point
-                    width: 49%
+                    width: gem(315)
                     display: flex
                     opacity: 0
                     transform: translateY(gem(-40))
+                    margin-bottom: gem(92)
                     p
                         max-width: gem(256)
-                    img
+                    &-img
+                        display: flex
+                        justify-content: center
+                        align-items: center
                         width: gem(40)
                         height: gem(40)
+                        border-radius: gem(20)
                         margin-right: gem(20)
+                        background: var(--color-white)
+                        opacity: 0.9
+                        box-shadow: 0 gem(12.5) gem(25) rgba(68, 83, 126, 0.1)
+                        transform: rotate(-180deg)
+                        z-index: 5
+                        &-one
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: gem(30)
+                            height: gem(30)
+                            border-radius: gem(15)
+                            background: var(--color-white)
+                            box-shadow: 0 gem(12.5) gem(25) rgba(68, 83, 126, 0.1)
+                            transform: rotate(-180deg)
+                            z-index: 6
+                        &-two
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: gem(15)
+                            height: gem(15)
+                            border-radius: gem(9)
+                            border: gem(3) #30BAFF solid
+                            mix-blend-mode: multiply
+                            filter: blur(gem(2.25))
+                            box-shadow: 0 gem(5) gem(5) rgba(0, 0, 0, 0.03)
+                            transform: rotate(-180deg)
+                            z-index: 7
                     &:first-child, &:last-child
                         width: 100%
                         justify-content: center
+                        p
+                            max-width: gem(311)
                     &-text
                         display: flex
                         flex-direction: column
-                .point:nth-child(1)
-                    margin-top: gem(-230)
-                    p
-                        max-width: gem(311)
+                .point:nth-child(2), .point:nth-child(4)
+                    margin-right: gem(285)
+                .point:nth-child(3), .point:nth-child(5)
+                    margin-left: gem(285)
+                .point:nth-child(4), .point:nth-child(5)
+                    margin-bottom: 0
+                .point:first-child
+                    margin-bottom: gem(72)
+                .point:last-child
+                    margin-top: gem(132)
+                    margin-bottom: 0
         .poly-text
             opacity: 0 
             transform: translateY(gem(-40))
@@ -581,22 +626,30 @@ section
         flex-direction: row
         flex-wrap: wrap
         justify-content: space-between
-        width: gem(550)
+        width: gem(780)
+        padding: gem(135) gem(120) gem(67) gem(120)
     &-card
+        display: flex
+        flex-direction: column
         width: gem(262)
         height: gem(296)
         border-radius: gem(10)
         background: linear-gradient(241.25deg, rgba(255, 255, 255, 0.45) 4.4%, rgba(255, 255, 255, 0.65) 61.77%, rgba(255, 255, 255, 0.54) 119.94%)
         box-shadow: 50px 38px 102.371px rgba(120, 118, 148, 0.14)
-        backdrop-filter: blur(21.5519px)
         opacity: 0
         transform: translateY(gem(-40))
+        align-items: center
+        padding: gem(54) gem(24) 0 gem(24)
+        p
+            text-align: center
+    &-card:nth-child(1), &-card:nth-child(2)
+        margin-bottom: gem(16)
     &-text
         position: absolute
         right: 0
         bottom: 0
         height: 0
-        width: 45%
+        width: gem(660)
         background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
         display: flex
         flex-direction: column
@@ -606,6 +659,17 @@ section
             width: gem(415)
             opacity: 0
             transform: translateX(gem(40))
+        h2.title-h2,  p.title-h2
+            font-size: gem(32)
+            line-height: gem(40)
+            font-weight: 400
+        h2.title-h2
+            color: var(--color-white)
+        p.title-h2
+            color: var(--color-light-blue)
+            margin-bottom: gem(7)
+        p.desc-1
+            color: var(--color-white)
     .second-part
         display: flex
         flex-direction: row
