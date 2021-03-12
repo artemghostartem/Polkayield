@@ -22,6 +22,12 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <video autoplay muted loop >
+            <source src="videos/Preloader.mp4" type="video/mp4">
+        </video>
+        <div class="preloader_inner">1%</div>
+    </div>
     <!-- Start here -->
     <div class="scrolable-div">
         <header class="header">
@@ -29,6 +35,18 @@
                 <div class="header-all">
                     <a href="#" class="header-all-logo">
                         <img src="img/logo.svg" alt="Logo">
+                        <svg viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.15731 16.7947C1.971 16.9797 1.73144 17.0589 1.46528 17.0589C1.19911 17.0589 0.959561 16.9797 0.773245 16.7947C0.586929 16.6098 0.480469 16.3985 0.480469 16.1343V1.73691C0.480469 1.47274 0.586929 1.23498 0.773245 1.05006C0.959561 0.86514 1.19911 0.785889 1.46528 0.785889H5.75055C7.108 0.785889 8.25251 1.23498 9.21071 2.13317C10.1689 3.03135 10.648 4.14088 10.648 5.48816C10.648 6.80902 10.1689 7.91854 9.21071 8.81673C8.25251 9.71491 7.108 10.164 5.75055 10.164H2.42348V16.1079C2.45009 16.3721 2.34363 16.6098 2.15731 16.7947ZM2.4501 8.26197H5.80379C6.6289 8.26197 7.32093 7.97138 7.9065 7.41662C8.46545 6.86185 8.75823 6.20142 8.75823 5.43532C8.75823 4.66922 8.46545 4.00879 7.9065 3.45403C7.34755 2.92569 6.65552 2.66151 5.80379 2.66151H2.47671V8.26197H2.4501Z"/>
+                            <path d="M19.8308 16.7418C19.0855 17.0588 18.3136 17.1909 17.4885 17.1909C16.6634 17.1909 15.8915 17.0324 15.1462 16.7418C14.401 16.4513 13.7356 16.0022 13.1766 15.421C11.9789 14.2322 11.3933 12.8057 11.3933 11.1414C11.3933 9.45069 11.9789 8.02416 13.1766 6.83538C14.3744 5.67302 15.8117 5.06543 17.4885 5.06543C19.192 5.06543 20.6293 5.6466 21.827 6.83538C22.386 7.39014 22.8384 8.05058 23.1312 8.79026C23.4506 9.52994 23.5837 10.3225 23.5837 11.115C23.5837 12.7793 22.9981 14.2058 21.8004 15.3946C21.2414 16.0022 20.576 16.4513 19.8308 16.7418ZM17.4619 15.2889C18.633 15.2889 19.6178 14.8662 20.4429 14.0473C21.2414 13.2548 21.6407 12.2773 21.6407 11.1414C21.6407 9.97904 21.2414 9.0016 20.4429 8.20908C19.6445 7.41656 18.633 6.99388 17.4619 6.99388C16.2908 6.99388 15.3059 7.39014 14.5074 8.20908C13.7089 9.02801 13.2831 10.0055 13.2831 11.1414C13.2831 12.2773 13.6823 13.2548 14.5074 14.0473C15.3326 14.8926 16.3174 15.2889 17.4619 15.2889Z" fill="#191B1F" />
+                            <path d="M27.0438 16.7947C26.8575 16.9797 26.6179 17.0589 26.3518 17.0589C26.0856 17.0589 25.846 16.9797 25.6597 16.7947C25.4734 16.6098 25.3669 16.3985 25.3669 16.1343V1.73691C25.3669 1.47274 25.4734 1.23498 25.6597 1.05006C25.846 0.86514 26.0856 0.785889 26.3518 0.785889C26.6179 0.785889 26.8575 0.86514 27.0438 1.05006C27.2301 1.23498 27.3366 1.44632 27.3366 1.73691V16.1343C27.3366 16.3721 27.2301 16.6098 27.0438 16.7947Z" />
+                            <path d="M30.8767 17.0591C30.6105 17.0591 30.3709 16.9798 30.1846 16.7949C29.9983 16.61 29.8918 16.3987 29.8918 16.1345V1.7371C29.8918 1.47293 29.9983 1.26159 30.1846 1.07667C30.3709 0.891752 30.6105 0.8125 30.8767 0.8125C31.1428 0.8125 31.3824 0.891752 31.5687 1.07667C31.755 1.26159 31.8349 1.47293 31.8349 1.7371V10.6133L37.2114 5.43551C37.3978 5.27701 37.6107 5.19776 37.8236 5.19776C38.0898 5.19776 38.3027 5.30343 38.5157 5.48835V5.51476C38.6754 5.67326 38.7552 5.88461 38.7552 6.14878C38.7552 6.41295 38.6487 6.62429 38.4624 6.80921L35.1087 10.0057L38.7818 15.5797C38.8883 15.7382 38.9415 15.9231 38.9415 16.1345C38.9415 16.4779 38.8084 16.7421 38.5157 16.927C38.3826 17.0327 38.2229 17.0855 38.0099 17.0855C37.6639 17.0855 37.3978 16.9534 37.1848 16.6628L33.6714 11.3794L31.7816 13.1493V16.1609C31.7816 16.4251 31.6752 16.6364 31.4888 16.8213C31.3558 16.9798 31.1428 17.0591 30.8767 17.0591Z"/>
+                            <path d="M46.0215 17.2176C45.1964 17.2176 44.4245 17.059 43.6792 16.7685C42.934 16.4779 42.2685 16.0288 41.7096 15.4476C40.5118 14.2588 39.9263 12.8323 39.9263 11.168C39.9263 9.4773 40.5118 8.05077 41.7096 6.86199C42.9073 5.69963 44.3446 5.09204 46.0215 5.09204C47.6983 5.09204 49.1356 5.67321 50.3334 6.83557C51.5045 7.97151 52.0901 9.37163 52.1433 11.0887V16.0816C52.1433 16.3722 52.0368 16.61 51.8505 16.7949C51.6642 16.9798 51.4247 17.0855 51.1319 17.0855C50.8657 17.0855 50.6262 16.9798 50.4665 16.7949C50.3068 16.61 50.2003 16.3722 50.2003 16.0816V15.4476C48.9759 16.61 47.5919 17.2176 46.0215 17.2176ZM46.0215 15.2891C47.1926 15.2891 48.1774 14.8664 49.0025 14.0475C49.801 13.255 50.2003 12.2775 50.2003 11.1416C50.2003 9.97923 49.801 9.00179 49.0025 8.20927C48.204 7.41675 47.1926 6.99408 46.0215 6.99408C44.8503 6.99408 43.8655 7.39034 43.067 8.20927C42.2685 9.02821 41.8427 10.0056 41.8427 11.1416C41.8427 12.2775 42.2419 13.255 43.067 14.0475C43.8922 14.8928 44.877 15.2891 46.0215 15.2891Z"/>
+                            <path d="M56.7479 21.4179C56.4019 21.2594 56.2422 20.9952 56.2422 20.6518C56.2422 20.4933 56.2954 20.3348 56.3753 20.1763L58.1586 16.1609L53.7935 6.43931C53.7402 6.33364 53.7136 6.17515 53.7136 6.01664C53.7136 5.91098 53.7402 5.8053 53.7669 5.69963C53.8733 5.43546 54.033 5.25054 54.2726 5.17129C54.4057 5.11846 54.5121 5.09204 54.6452 5.09204C54.8315 5.09204 55.0178 5.14487 55.1775 5.25054C55.3372 5.35621 55.4437 5.48829 55.5502 5.67322L59.17 13.9154L62.8432 5.67322C62.923 5.48829 63.0295 5.35621 63.1892 5.25054C63.3489 5.14487 63.5086 5.09204 63.6949 5.09204C63.8546 5.09204 63.9877 5.11846 64.1208 5.19771C64.4934 5.38263 64.6797 5.67322 64.6797 6.06947C64.6797 6.20156 64.6531 6.33365 64.5998 6.46573L58.0788 20.9424C57.9989 21.1273 57.8658 21.2594 57.7061 21.3651C57.5464 21.4707 57.3601 21.5236 57.1738 21.5236C57.0141 21.4971 56.881 21.4707 56.7479 21.4179Z" />
+                            <path d="M67.9535 3.11078C67.7406 3.32212 67.4744 3.42778 67.155 3.42778C66.8356 3.42778 66.5694 3.32212 66.3565 3.11078C66.1436 2.89944 66.0371 2.63527 66.0371 2.31827C66.0371 2.00126 66.1436 1.73709 66.3565 1.52575C66.5694 1.31441 66.8356 1.20874 67.155 1.20874C67.4744 1.20874 67.7406 1.31441 67.9535 1.52575C68.1664 1.73709 68.2729 2.00126 68.2729 2.31827C68.2729 2.63527 68.1664 2.89944 67.9535 3.11078ZM67.8204 16.7685C67.6341 16.9534 67.4212 17.0591 67.155 17.0591C66.8888 17.0591 66.6493 16.9534 66.463 16.7685C66.2767 16.5836 66.1702 16.3458 66.1702 16.0816V6.01668C66.1702 5.7525 66.2767 5.51475 66.463 5.32983C66.6493 5.14491 66.8888 5.03924 67.155 5.03924C67.4212 5.03924 67.6607 5.14491 67.847 5.32983C68.0334 5.51475 68.1132 5.7525 68.1132 6.01668V16.0816C68.1132 16.3722 68.0067 16.5836 67.8204 16.7685Z" />
+                            <path d="M76.0449 17.1909C74.3681 17.1909 72.9042 16.6098 71.7064 15.421C71.1208 14.8398 70.695 14.2058 70.3756 13.4661C70.0562 12.7264 69.9231 11.9603 69.9231 11.1414C69.9231 9.45069 70.5087 8.02416 71.7064 6.83538C72.9042 5.67302 74.3415 5.06543 76.0449 5.06543C76.87 5.06543 77.6419 5.22393 78.3872 5.51452C79.1325 5.83152 79.7979 6.25421 80.3568 6.80897C81.528 7.99774 82.1401 9.39785 82.1667 11.0621C82.1667 11.3263 82.0869 11.5641 81.9006 11.7226C81.7143 11.8811 81.5013 11.9603 81.2086 11.9603H72.0524C72.2121 12.9378 72.6646 13.7303 73.4099 14.3643C74.1552 14.9983 75.0335 15.3417 76.0449 15.3417C77.2693 15.3417 78.2275 14.9191 78.9461 14.0737C79.1591 13.9152 79.3986 13.8359 79.6116 13.8359C79.6914 13.8359 79.7713 13.8624 79.9043 13.8888C80.0907 13.968 80.2504 14.1001 80.3568 14.285C80.4633 14.4435 80.5431 14.6285 80.5431 14.8398C80.5431 15.1304 80.4367 15.3681 80.1971 15.5531C79.718 16.0286 79.1591 16.4248 78.5203 16.689C77.8016 17.0324 76.9765 17.1909 76.0449 17.1909ZM71.9992 10.4017H80.1971C80.064 9.39785 79.6116 8.5525 78.8397 7.91849C78.0678 7.25806 77.1362 6.91464 76.0982 6.91464C75.0335 6.91464 74.1285 7.25806 73.3566 7.94491C72.5848 8.57892 72.1323 9.39785 71.9992 10.4017Z" />
+                            <path d="M85.6537 16.7947C85.4673 16.9797 85.2278 17.0589 84.9616 17.0589C84.6954 17.0589 84.4559 16.9797 84.2696 16.7947C84.0833 16.6098 83.9768 16.3985 83.9768 16.1343V1.73691C83.9768 1.47274 84.0833 1.23498 84.2696 1.05006C84.4559 0.86514 84.6954 0.785889 84.9616 0.785889C85.2278 0.785889 85.4673 0.86514 85.6537 1.05006C85.84 1.23498 85.9464 1.44632 85.9464 1.73691V16.1343C85.9464 16.3721 85.84 16.6098 85.6537 16.7947Z" />
+                            <path d="M93.8782 17.191C92.2013 17.191 90.764 16.6099 89.5663 15.4211C88.3685 14.2323 87.783 12.8058 87.783 11.1415C87.783 9.4508 88.3685 8.02426 89.5663 6.83549C90.764 5.67313 92.2013 5.06554 93.8782 5.06554C95.4752 5.06554 96.8592 5.62029 98.057 6.7034V1.71054C98.057 1.44637 98.1368 1.20861 98.3232 1.02369C98.5095 0.838773 98.749 0.759521 99.0152 0.759521C99.2814 0.759521 99.5209 0.838773 99.7072 1.02369C99.8935 1.20861 100 1.41995 100 1.71054V16.1079C100 16.3721 99.8935 16.5834 99.7072 16.7684C99.5209 16.9533 99.2814 17.0325 99.0152 17.0325C98.749 17.0325 98.5095 16.9533 98.3232 16.7684C98.1368 16.5834 98.057 16.3721 98.057 16.1079V15.5532C96.8592 16.6363 95.4752 17.191 93.8782 17.191ZM93.8782 15.289C95.0493 15.289 96.0341 14.8663 96.8592 14.0474C97.6577 13.2549 98.057 12.2774 98.057 11.1415C98.057 9.97914 97.6577 9.0017 96.8592 8.20918C96.0607 7.41667 95.0759 7.02041 93.8782 7.02041C92.707 7.02041 91.7222 7.41667 90.9237 8.20918C90.1252 9.0017 89.6994 10.0056 89.6994 11.1415C89.6994 12.2774 90.0986 13.2549 90.9237 14.0474C91.7222 14.8663 92.707 15.289 93.8782 15.289Z"  />
+                        </svg>
                     </a>
                     <div class="header-all-links">
                         <a class="menu-1" href="#">Chapter 1</a>
@@ -69,10 +87,16 @@
                     </div>
                 </div>
                 <div class="opening-anim">
+                <video autoplay muted loop >
+                    <source src="videos/banner-left.mp4" type="video/mp4">
+                </video>
                 </div>
             </section>
             <section class="leveraged invisible ">
                 <div class="leveraged-anim">
+                    <video autoplay muted loop>
+                        <source src="videos/lavarage.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="leveraged-text">
                     <div class="leveraged-text-main">
@@ -93,19 +117,19 @@
                     <div class="book-pics">
                         <ul class="book-pics-list">
                             <li>
-                                <div class="book-pics-list-img"><img src="img/book-icon-1.svg" alt="book-icon"></div>
+                                <div class="book-pics-list-img"><img src="img/book-icon-1.png" alt="book-icon"></div>
                                 <p class="label-1">Liquidity positions</p>
                             </li>
                             <li>
-                                <div class="book-pics-list-img"><img src="img/book-icon-2.svg" alt="book-icon"></div>
+                                <div class="book-pics-list-img"><img src="img/book-icon-2.png" alt="book-icon"></div>
                                 <p class="label-1">Synthetic assets</p>
                             </li>
                             <li>
-                                <div class="book-pics-list-img"><img src="img/book-icon-3.svg" alt="book-icon"></div>
+                                <div class="book-pics-list-img"><img src="img/book-icon-3.png" alt="book-icon"></div>
                                 <p class="label-1">Digital art</p>
                             </li>
                             <li>
-                                <div class="book-pics-list-img"><img src="img/book-icon-4.svg" alt="book-icon"></div>
+                                <div class="book-pics-list-img"><img src="img/book-icon-4.png" alt="book-icon"></div>
                                 <p class="label-1">Virtual land</p>
                             </li>
                         </ul>
@@ -137,7 +161,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +177,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +193,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -188,7 +209,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +225,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +241,6 @@
                                     <div class="point-img">
                                         <div class="point-img-one">
                                             <div class="point-img-two">
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -241,20 +259,20 @@
                     <div class="smart-pics">
                         <ul class="smart-pics-list">
                             <li>
-                                <div class="smart-pics-list-img"><img src="img/book-icon-5.svg" alt="book-icon"></div>
-                                <p class="label-1">Liquidity positions</p>
+                                <div class="smart-pics-list-img"><img src="img/book-icon-5.png" alt="book-icon"></div>
+                                <p class="label-1">Smart contract insurance policies</p>
                             </li>
                             <li>
-                                <div class="smart-pics-list-img"><img src="img/book-icon-6.svg" alt="book-icon"></div>
-                                <p class="label-1">Synthetic assets</p>
+                                <div class="smart-pics-list-img"><img src="img/book-icon-6.png" alt="book-icon"></div>
+                                <p class="label-1">Music</p>
                             </li>
                             <li>
-                                <div class="smart-pics-list-img"><img src="img/book-icon-7.svg" alt="book-icon"></div>
-                                <p class="label-1">Digital art</p>
+                                <div class="smart-pics-list-img"><img src="img/book-icon-7.png" alt="book-icon"></div>
+                                <p class="label-1">Crypto collectibles</p>
                             </li>
                             <li>
-                                <div class="smart-pics-list-img"><img src="img/book-icon-8.svg" alt="book-icon"></div>
-                                <p class="label-1">Virtual land</p>
+                                <div class="smart-pics-list-img"><img src="img/book-icon-8.png" alt="book-icon"></div>
+                                <p class="label-1">Domain names</p>
                             </li>
                         </ul>
                     </div>
@@ -263,25 +281,25 @@
             <section class="power invisible">
                 <div class="power-card-wrapper">
                     <div class="power-card">
-                        <img src="img/power-img-1.svg" alt="">
+                        <img src="img/power-img-1.png" alt="">
                         <p class="label-2">
-                            Cheap  transactions
+                            Cheap <br>transactions
                         </p>
                     </div>
                     <div class="power-card">
-                        <img src="img/power-img-2.svg" alt="">
+                        <img src="img/power-img-2.png" alt="">
                         <p class="label-2">
-                            Incredibly high throughput
+                            Incredibly high <br>throughput
                         </p>
                     </div>
                     <div class="power-card">
-                        <img src="img/power-img-3.svg" alt="">
+                        <img src="img/power-img-3.png" alt="">
                         <p class="label-2">
                             Security and reliability for high-value transfers
                         </p>
                     </div>
                     <div class="power-card">
-                        <img src="img/power-img-4.svg" alt="">
+                        <img src="img/power-img-4.png" alt="">
                         <p class="label-2">
                             A flourishing development and dApp ecosystem
                         </p>
@@ -289,7 +307,8 @@
                 </div>
                 <div class="power-text">
                     <h2 class="title-h2 first-title">
-                        The Power of Polkadot
+                        The Power of Polkadot <br>
+                        Powered by Polkadot
                     </h2>
                     <p class="title-h2 first-text">
                         Connecting the Dots
@@ -301,7 +320,7 @@
                     <div class="second-part">
                         <div class="text-part">
                             <h2 class="title-h2 first-title">
-                                The POKY Token
+                                The <span>POKY</span> Token
                             </h2>
                             <p class="desc-1 first-text">
                                 POKY is Polkayield’s native governance token, allowing holders to create and vote on proposals relating to protocol guidance. The POKY token’s ultimate goal is to align the incentives across the Polkayeild protocol, creating a codified harmony between stakeholders, the protocol itself, and the security of the assets contained within it.
@@ -320,8 +339,36 @@
                 </h2>
                 <div class="button">
                     <a class="button-2 up-text" href="#">
-                        Get started
+                        Get early access
                     </a>
+                </div>
+                <div class="bubbles">
+                    <img src="img/bubbles-one.png" alt="">
+                    <img src="img/bubbles-two.png" alt="">
+                </div>
+                <div class="bottom-line-wrapper">
+                    <div class="container">
+                        <div class="color-line"></div>
+                        <div class="bottom-line">
+                            <p class="desc-3">© 2021 Polkayield, LLC</p>
+                            <div class="social">
+                                <a href="#">
+                                    <img src="img/facebook.png" alt="">
+                                </a>
+                                <a href="#">
+                                    <img src="img/twitter.png" alt="">
+                                </a>
+                            </div>
+                            <div class="policy">
+                                <a href="#" class="desc-3">
+                                    Terms
+                                </a>
+                                <a href="#" class="desc-3">
+                                    Privacy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

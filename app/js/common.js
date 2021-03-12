@@ -1,6 +1,33 @@
 $(function() {
+    //preloader
+    loader();
+        let obj = document.querySelector('.preloader')
+        let inner = document.querySelector('.preloader_inner')
+        function loader(_success) {
+            let w = 0
+
+            let newInterval = setInterval(function() {
+                if (w == 100) {
+                    return
+                }
+                w = w+1
+                inner.textContent = w + '%';
+            }, 30)
+
+            setTimeout(function() {
+                clearInterval(newInterval);
+                obj.classList.add('inactive')
+                TweenMax.to(h1, 0.5, { opacity: 1, x: 0.15 })
+                TweenMax.to(openingSubtitle, 0.5, { opacity: 1, x: 0, delay: 0.3 })
+                TweenMax.to(openingButtom, 0.5, { opacity: 1, x: 0, delay: 0.45 })
+            }, 3000)
+        }
 
     //global variables
+    let isMobile = false
+    if (window.innerWidth < 1024) {
+        isMobile = true
+    }
     let scrollFromTop
     let scrollableWrapper = document.querySelector('.scrolable-div')
     let scrollPoint = document.querySelector('body').getBoundingClientRect().height / 8
@@ -21,7 +48,7 @@ $(function() {
     window.addEventListener('scroll', function() {
         scrollFromTop = window.scrollY;
         // console.log(window.scrollY);
-        if (!resetStatus) {
+        if (!resetStatus || isMobile) {
         	return
         }
         openingAnimation();
@@ -37,8 +64,9 @@ $(function() {
     function headerStates() {
         if (scrollFromTop > 50 && scrollFromTop < scrollPoint && !header.classList.contains('light')) {
             header.classList.add('light')
+            header.classList.remove('dark')
             console.log('header light')
-        } else if (header.classList.contains('light') && scrollFromTop < 10 || scrollFromTop > scrollPoint && header.classList.contains('light')) {
+        } else if (header.classList.contains('light') && scrollFromTop < 50 || scrollFromTop > scrollPoint && header.classList.contains('light')) {
             header.classList.remove('light')
             console.log('header light remove')
         } else if (scrollFromTop > scrollPoint && scrollFromTop < scrollPoint * 2 && !header.classList.contains('dark')) {
@@ -47,7 +75,19 @@ $(function() {
         } else if (header.classList.contains('dark') && scrollFromTop < scrollPoint || scrollFromTop > scrollPoint * 2 && header.classList.contains('dark')) {
             header.classList.remove('dark')
             console.log('header dark remove')
-        }
+        } else if (scrollFromTop > scrollPoint*5 && scrollFromTop < scrollPoint * 6 && !header.classList.contains('light_two')) {
+            header.classList.add('light_two')
+            header.classList.remove('full-light')
+        } else if (header.classList.contains('light_two') && scrollFromTop < scrollPoint*5) {
+            header.classList.remove('light_two')
+        } else if (scrollFromTop > scrollPoint*6 && scrollFromTop < scrollPoint * 7 && !header.classList.contains('full-light')) {
+            header.classList.add('full-light')
+            header.classList.remove('light_two')
+        } else if (header.classList.contains('full-light') && scrollFromTop < scrollPoint*6) {
+            header.classList.remove('full-light')
+        }  else if (scrollFromTop > scrollPoint*7 && scrollFromTop < scrollPoint * 8 && header.classList.contains('full-light')) {
+            header.classList.remove('full-light')
+          }
     }
 
     //opening animation
@@ -152,6 +192,8 @@ $(function() {
     let flex = 'flex'
     let none = 'none'
     let rems = '2.5rem'
+    let sixPerCent = '-6%'
+    let onePerCent = '-8%'
     let imageScrollHeight = windowHeight / 1.3
 
     function smartAnimation() {
@@ -168,7 +210,7 @@ $(function() {
             TweenMax.to(smartPolyBlock, 0, { display: none, delay: 0.45 })
             TweenMax.to(smartPolyTitle, 0.3, { opacity: 0, y: -40 })
             TweenMax.to(smartPolyText, 0.3, { opacity: 0, y: -40, delay: 0.15 })
-            TweenMax.to(smartImg, 0.5, { opacity: 0, scale: 1, y: windowHeight, delay: 0.15 })
+            TweenMax.to(smartImg, 0.5, { opacity: 0, scale: 1, y: windowHeight, x: sixPerCent, delay: 0.15 })
             console.log('state 1')
         } else if (scrollFromTop < scrollPoint * 2 && !smart.classList.contains('invisible')) {
             TweenMax.to(smartText[0], 0.5, { opacity: 0, x: -40 })
@@ -190,14 +232,14 @@ $(function() {
             TweenMax.to(smartPolyBlock, 0, { display: flex, delay: 1.5 })
             TweenMax.to(smartPolyTitle, 0.5, { opacity: 1, y: 0, delay: 1.6 })
             TweenMax.to(smartPolyText, 0.5, { opacity: 1, y: 0, delay: 1.75 })
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 2.5, y: imageScrollHeight, delay: 1.9 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 2.2, y: imageScrollHeight, x: onePerCent,delay: 1.9 })
             smart.classList.add('phase-one')
             smart.classList.remove('phase-two')
             console.log('state 3')
         } else if (scrollFromTop > scrollPoint * 3 && scrollFromTop < scrollPoint * 4 && !smart.classList.contains('invisible') && smart.classList.contains('phase-two')) {
             TweenMax.to(smartPolyTitle, 0.5, { opacity: 1, y: 0, delay: 0.65 })
             TweenMax.to(smartPolyText, 0.5, { opacity: 1, y: 0, delay: 0.8 })
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 2.5, y: imageScrollHeight, delay: 0.5 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 2.2, y: imageScrollHeight, x: onePerCent, delay: 0.5 })
             TweenMax.to(point[0], 0.3, { opacity: 0, y: 0 })
             TweenMax.to(point[2], 0.3, { opacity: 0, y: -40, delay: 0.05 })
             TweenMax.to(point[4], 0.3, { opacity: 0, y: -40, delay: 0.1 })
@@ -209,7 +251,7 @@ $(function() {
         } else if (scrollFromTop > scrollPoint * 4 && !smart.classList.contains('phase-two')) {
             TweenMax.to(smartPolyTitle, 0.5, { opacity: 0, y: -40, delay: 0 })
             TweenMax.to(smartPolyText, 0.5, { opacity: 0, y: -40, delay: 0.15 })
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 0, delay: 0.3 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 200, x: sixPerCent, delay: 0.3 })
             TweenMax.to(point[0], 0.3, { opacity: 1, y: 0, delay: 0.7 })
             TweenMax.to(point[2], 0.3, { opacity: 1, y: 0, delay: 0.85 })
             TweenMax.to(point[4], 0.3, { opacity: 1, y: 0, delay: 1 })
@@ -220,7 +262,7 @@ $(function() {
             smart.classList.add('phase-two')
 
         } else if (scrollFromTop > scrollPoint * 2 && scrollFromTop < scrollPoint * 5 && smart.classList.contains('invisible')) {
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 0, delay: 0.3 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 200, delay: 0.3 })
             TweenMax.to(point[0], 0.3, { opacity: 1, y: 0, delay: 0.7 })
             TweenMax.to(point[2], 0.3, { opacity: 1, y: 0, delay: 0.85 })
             TweenMax.to(point[4], 0.3, { opacity: 1, y: 0, delay: 1 })
@@ -388,7 +430,7 @@ $(function() {
         currentScreen = currentScreen + 1
         inProgress = true
         let nextScrollPosition = scrollPoint * currentScreen
-        TweenMax.to(window, { duration: 0, scrollTo: nextScrollPosition, onComplete: () => { inprogressFalse() } });
+        TweenMax.to(window, { duration: 2, scrollTo: nextScrollPosition, onComplete: () => { inProgress = false } });
     }
 
    
@@ -420,28 +462,28 @@ $(function() {
     let chapterLinks = document.querySelectorAll('.header-all-links a')
 
     chapterLinks[0].addEventListener('click', function() {
-        if (inProgress) {
+        if (inProgress || isMobile) {
             return
         }
         chapterSwitch(0)
         killAllTweens()    
     });
     chapterLinks[1].addEventListener('click', function() {
-        if (inProgress) {
+        if (inProgress || isMobile) {
             return
         }
         chapterSwitch(1)
         killAllTweens()
     })
     chapterLinks[2].addEventListener('click', function() {
-        if (inProgress) {
+        if (inProgress || isMobile) {
             return
         }
         chapterSwitch(2)
         killAllTweens()
     })
     chapterLinks[3].addEventListener('click', function() {
-        if (inProgress) {
+        if (inProgress || isMobile) {
             return
         }
         chapterSwitch(3)
