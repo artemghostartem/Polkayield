@@ -477,3 +477,86 @@ section
             li
                 opacity: 0
                 transform: translateX(gem(-40))
+
+//power
+.power
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    height: 100vh
+    background: linear-gradient(107.56deg, #FEFFFF 0%, #F0EDF1 100%)
+    &-card-wrapper
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+        width: gem(550)
+    &-card
+        width: gem(262)
+        height: gem(296)
+        border-radius: gem(10)
+        background: linear-gradient(241.25deg, rgba(255, 255, 255, 0.45) 4.4%, rgba(255, 255, 255, 0.65) 61.77%, rgba(255, 255, 255, 0.54) 119.94%)
+        box-shadow: 50px 38px 102.371px rgba(120, 118, 148, 0.14)
+        backdrop-filter: blur(21.5519px)
+        opacity: 0
+        transform: translateY(gem(-40))
+    &-text
+        position: absolute
+        right: 0
+        bottom: 0
+        height: 0
+        width: 45%
+        background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        h2, p
+            width: gem(415)
+            opacity: 0
+            transform: translateX(gem(40))
+    .second-part
+        display: flex
+        flex-direction: row
+        // display: none
+        align-items: center
+        position: absolute
+        width: 100%
+        height: 100vh
+        .text-part
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            width: gem(900)
+            height: auto
+            align-items: center
+            h2
+                width: 100%
+                transform: translateY(gem(-40))
+                margin-bottom: gem(20)
+            p
+                width: gem(417)
+                transform: translateY(gem(-40))
+                margin-right: gem(20)
+        img
+            width: gem(1553)
+            max-width: unset
+            height: gem(1553)
+            position: absolute
+            bottom: -80vh
+            right: -48%
+            opacity: 0
+
+//footer
+.footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100vh
+    background: linear-gradient(135deg, #EBF9FF 25%, #F6F5FE 75%)
+    width: 100%
+    h2, .button
+        opacity: 0
+        transform: translateY(gem(-40))
