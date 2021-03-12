@@ -40,9 +40,17 @@
 @mixin desc-2
     @include mixed-lbl(var(--color-white), var(--main-font), var(--font-size-desc2), var(--font-weight-4), var(--letter-spacing), var(--line-height-desc2))
 
+//desc-3
+@mixin desc-3
+    @include mixed-lbl(var(--color-grey), var(--main-font), var(--font-size-desc3), var(--font-weight-4), var(--letter-spacing), var(--line-height-desc3))
+
 //label-1
 @mixin label-1
     @include mixed-lbl(var(--color-black), var(--main-font), var(--font-size-label-1), var(--font-weight-5), var(--letter-spacing), var(--line-height-label-1))
+
+//label-2
+@mixin label-2
+    @include mixed-lbl(var(--color-black), var(--sub-font), var(--font-size-label-2), var(--font-weight-6), var(--letter-spacing), var(--line-height-label-2))
 
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -89,5 +97,11 @@ article, footer, header, nav, section, input, textarea, button
         &.black
             color: #1B1C21
 
+    &.desc-3
+        @include desc-3
+
     &.label-1
         @include label-1
+
+    &.label-2
+        @include label-2

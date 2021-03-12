@@ -411,6 +411,27 @@ section
                 display: flex
                 justify-content: center
                 align-items: center
+            li:nth-child(1)
+                .book-pics-list-img
+                    img
+                        width: gem(92)
+                        height: auto
+            li:nth-child(2)
+                .book-pics-list-img
+                    img
+                        width: gem(86)
+                        height: auto
+            li:nth-child(3)
+                .book-pics-list-img
+                    img
+                        width: gem(101)
+                        height: auto
+            li:nth-child(4)
+                margin-bottom: gem(34)
+                .book-pics-list-img
+                    img
+                        width: gem(60)
+                        height: auto
 
 
 //smart
@@ -424,6 +445,9 @@ section
         justify-content: center
         align-items: center
         position: absolute
+        flex-direction: column
+        p.desc-2.black.smart-text-one:first-child
+            margin-bottom: gem(20)
         p
             opacity: 0
             transform: translateX(gem(-40))
@@ -435,6 +459,12 @@ section
             justify-content: center
             align-items: center
             display: none
+
+            h2.title-h2
+                color: var(--color-grey)
+                margin-bottom: gem(36)
+                span.title-h2
+                    color: var(--color-purple)
             p
                 opacity: 1
                 transform: none
@@ -447,14 +477,18 @@ section
                 opacity: 0
             .points
                 display: flex
-                width: 100%
+                width: gem(1200)
                 flex-wrap: wrap
+                justify-content: space-between
                 position: absolute
+                top: 0
                 .point
                     width: 49%
                     display: flex
                     opacity: 0
                     transform: translateY(gem(-40))
+                    p
+                        max-width: gem(256)
                     img
                         width: gem(40)
                         height: gem(40)
@@ -465,9 +499,19 @@ section
                     &-text
                         display: flex
                         flex-direction: column
+                .point:nth-child(1)
+                    margin-top: gem(-230)
+                    p
+                        max-width: gem(311)
         .poly-text
             opacity: 0 
             transform: translateY(gem(-40))
+            display: flex
+            width: gem(890)
+            justify-content: space-between
+            p
+                max-width: gem(417)
+            p.desc-1:first-child
 
         h2
             opacity: 0
@@ -494,6 +538,7 @@ section
                 align-items: center
                 width: gem(330)
                 justify-content: flex-start
+                margin-bottom: gem(34)
             &-img
                 width: gem(101)
                 height: gem(97)
@@ -501,6 +546,27 @@ section
                 display: flex
                 justify-content: center
                 align-items: center
+            li:nth-child(1)
+                .smart-pics-list-img
+                    img
+                        width: gem(82)
+                        height: auto
+            li:nth-child(2)
+                .smart-pics-list-img
+                    img
+                        width: gem(78)
+                        height: auto
+            li:nth-child(3)
+                .smart-pics-list-img
+                    img
+                        width: gem(80)
+                        height: auto
+            li:nth-child(4)
+                margin-bottom: gem(34)
+                .smart-pics-list-img
+                    img
+                        width: gem(95)
+                        height: auto
 
 //power
 .power
