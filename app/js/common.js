@@ -139,7 +139,7 @@ $(function() {
 
     //smart
     let smart = document.querySelector('.smart')
-    let smartText = document.querySelector('.smart-text-one')
+    let smartText = document.querySelectorAll('.smart-text-one')
     let smartListOne = document.querySelectorAll('.smart-pics-list li')
     let smartBackground = document.querySelector('.smart-text')
     let smartPolyBlock = document.querySelector('.poly-block')
@@ -159,7 +159,8 @@ $(function() {
             smart.classList.remove('invisible')
             smart.classList.remove('phase-one')
             TweenMax.to(smartBackground, 0.5, { width: widthSmall, delay: 0.3 })
-            TweenMax.to(smartText, 0.5, { opacity: 1, x: 0, delay: 0.5 })
+            TweenMax.to(smartText[0], 0.5, { opacity: 1, x: 0, delay: 0.5 })
+			TweenMax.to(smartText[1], 0.5, { opacity: 1, x: 0, delay: 0.55 })
             TweenMax.to(smartListOne[0], 0.5, { opacity: 1, x: 0, delay: 0.65 })
             TweenMax.to(smartListOne[1], 0.5, { opacity: 1, x: 0, delay: 0.8 })
             TweenMax.to(smartListOne[2], 0.5, { opacity: 1, x: 0, delay: 0.95 })
@@ -170,7 +171,8 @@ $(function() {
             TweenMax.to(smartImg, 0.5, { opacity: 0, scale: 1, y: windowHeight, delay: 0.15 })
             console.log('state 1')
         } else if (scrollFromTop < scrollPoint * 2 && !smart.classList.contains('invisible')) {
-            TweenMax.to(smartText, 0.5, { opacity: 0, x: -40 })
+            TweenMax.to(smartText[0], 0.5, { opacity: 0, x: -40 })
+            TweenMax.to(smartText[1], 0.5, { opacity: 0, x: -40, delay: 0.5 })
             TweenMax.to(smartListOne[0], 0.5, { opacity: 0, x: -40, delay: 0.15 })
             TweenMax.to(smartListOne[1], 0.5, { opacity: 0, x: -40, delay: 0.3 })
             TweenMax.to(smartListOne[2], 0.5, { opacity: 0, x: -40, delay: 0.45 })
@@ -178,7 +180,8 @@ $(function() {
             smart.classList.add('invisible')
             console.log('state 2')
         } else if (scrollFromTop > scrollPoint * 3 && !smart.classList.contains('invisible') && !smart.classList.contains('phase-one')) {
-            TweenMax.to(smartText, 0.5, { opacity: 0, x: -40 })
+            TweenMax.to(smartText[0], 0.5, { opacity: 0, x: -40 })
+            TweenMax.to(smartText[1], 0.5, { opacity: 0, x: -40, delay: 0.05 })
             TweenMax.to(smartListOne[0], 0.5, { opacity: 0, x: -40, delay: 0.15 })
             TweenMax.to(smartListOne[1], 0.5, { opacity: 0, x: -40, delay: 0.3 })
             TweenMax.to(smartListOne[2], 0.5, { opacity: 0, x: -40, delay: 0.45 })
@@ -375,8 +378,8 @@ $(function() {
         }
     }
 
-    function next() {
-        currentScreen = currentScreen + 1
+    function next(screenIncex = 1) {
+        currentScreen = currentScreen + screenIncex
         inProgress = true
         let nextScrollPosition = scrollPoint * currentScreen
         TweenMax.to(window, { duration: 2, scrollTo: nextScrollPosition, onComplete: () => { inProgress = false; } });
@@ -388,11 +391,19 @@ $(function() {
         }, 2000)
     }
 
-    function prev() {
-        currentScreen = currentScreen - 1
+    function prev(screenIncex = 1) {
+        currentScreen = currentScreen - screenIncex
         inProgress = true
         let nextScrollPosition = scrollPoint * currentScreen - 10
         TweenMax.to(window, { duration: 0, scrollTo: nextScrollPosition, onComplete: () => { inprogressFalse() } });
     }
 
+    let openingScroll = document.querySelector('.opening-text-scroll')
+    openingScroll.addEventListener('click', function() {
+    	next()
+    })
+
+    function testFunc(atttr = '2') {
+    	console.log(atttr)
+    }
 });
