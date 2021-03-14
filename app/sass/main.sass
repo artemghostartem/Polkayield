@@ -128,7 +128,11 @@ button[type='submit']
     background: #ffffff
     transition: all 0.3s ease
     video
-        width: 100%
+        width: 150%
+        height: 150%
+        margin-left: -25%
+        margin-top: -12.5%
+        // height: 100vh
     .preloader_inner
         position: absolute
         top: 45vh
@@ -156,9 +160,17 @@ button[type='submit']
         .header-all-button
             background: #ffffff
             transition: all 0.75s ease
+            &:after
+                background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            &:hover
+                a.button-1
+                    color: #ffffff
         .header-all-links
-            a:last-child 
+            a:nth-child(4)
                 color: #ffffff
+            &:after
+                display: flex
+                // opacity: 1
         .header-line-main
             width: 100%
     &.light_two
@@ -167,8 +179,13 @@ button[type='submit']
         .header-all-button
             background: #ffffff
             transition: all 0.75s ease
+            &:after
+                background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            &:hover
+                a.button-1
+                    color: #ffffff
         .header-all-links
-            a:last-child 
+            a:nth-child(4) 
                 color: #ffffff
         .header-line-main
             width: 100%
@@ -179,9 +196,16 @@ button[type='submit']
         .header-all-button
             background: #ffffff
             transition: all 0.75s ease
+            &:after
+                background: linear-gradient(180deg, #313133 0%, #1B1C21 100%)
+            &:hover
+                a.button-1
+                    color: #ffffff
         .header-all-links
             a
                 color: #ffffff
+            .bottom-line
+                background: #ffffff
         .header-line-main
             width: 100%
             opacity: 0.2
@@ -196,6 +220,8 @@ button[type='submit']
                     color: #fff
             a:last-child 
                 color: #5B637C
+            .bottom-line
+                background: #fff
         .header-all-logo
             svg
                 path
@@ -210,6 +236,7 @@ button[type='submit']
         width: 100%
         align-items: center
         position: relative
+        
         &-logo
             display: flex
             width: auto
@@ -229,9 +256,24 @@ button[type='submit']
         &-links
             display: flex
             margin-left: gem(-100)
+            position: relative
+            .bottom-line
+                display: flex
+                opacity: 0
+                width: gem(63)
+                height: gem(1.5)
+                position: absolute
+                bottom: gem(-10)
+                border-radius: gem(100)
+                left: 0
+                background: #725BFF
+                transition: background 0.3s ease
+
+                
             a
                 margin-right: gem(58)
                 transition: all 0.75s ease
+                cursor: unset
             a:last-child
                 margin-right: 0
         &-button
@@ -243,8 +285,31 @@ button[type='submit']
             background: #313133
             border-radius: gem(100)
             transition: all 0.75s ease
+            position: relative
+
             a
-                transition: all 0.75s ease
+                width: 100%
+                height: gem(37)
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: all 0.3s ease
+                z-index: 999
+            &:after
+                opacity: 0
+                content: ''
+                display: flex
+                width: gem(95)
+                height: gem(39)
+                background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
+                position: absolute
+                top: gem(-1)
+                left: gem(-1)
+                border-radius: gem(100)
+                transition: all 0.3s ease
+            &:hover
+                &:after
+                    opacity: 1
     &-line
         display: flex
         justify-content: center
@@ -287,8 +352,29 @@ section
     align-items: center
     background: linear-gradient(180deg, #9268E9 0%, #735CFF 100%)
     border-radius: gem(10)
+    position: relative
+    &:after
+        content: ''
+        display: flex
+        position: absolute
+        background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
+        z-index: 2
+        width: 100%
+        height: gem(64)
+        border-radius: gem(10)
+        transition: all 0.3s ease
+        opacity: 0
+    &:hover
+        &:after
+            opacity: 1
     a
+        z-index: 3
         letter-spacing: gem(1)
+        width: 100%
+        height: gem(64)
+        display: flex
+        align-items: center
+        justify-content: center
 
 // opening
 
@@ -354,7 +440,7 @@ section
                 height: gem(60)
                 border-radius: gem(30)
                 background: var(--color-white)
-                opacity: 0.6
+                opacity: 1
                 box-shadow: 0 gem(10) gem(20) rgba(68, 83, 126, 0.1)
                 border-radius: gem(30)
                 margin-right: gem(12)
@@ -371,6 +457,24 @@ section
                     border-radius: gem(100)
                     img
                         width: gem(12)
+                        position: absolute
+                        opacity: 1
+                        // transition: all 0.3s ease
+                        &:last-child
+                            opacity: 0
+                            // transition: all 0.3s ease
+            &:hover
+                .opening-text-scroll-circle-core
+                    img
+                        &:last-child
+                            opacity: 1
+                        &:first-child
+                            opacity: 0  
+                .opening-text-scroll-text span
+                    background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                            
             &-text
                 display: flex
                 cursor: pointer
@@ -387,9 +491,11 @@ section
         height: 100vh
 
         video
-            width: 100%
-            margin-left: -23%
-            margin-top: gem(40)
+            width: 85%
+            margin-left: -18%
+            // margin-top: gem(40)
+            position: absolute
+            bottom: gem(-40)
     &-text
         display: flex
         justify-content: flex-end
@@ -650,7 +756,7 @@ section
                 .point:first-child
                     margin-bottom: gem(72)
                 .point:last-child
-                    margin-top: gem(132)
+                    margin-top: gem(90)
                     margin-bottom: 0
         .poly-text
             opacity: 0 
@@ -667,7 +773,7 @@ section
             transform: translateY(gem(-40))
     &-book
         display: flex
-        width: 100
+        // width: 100
         flex-direction: row
     &-pics
         width: gem(810)
@@ -820,7 +926,7 @@ section
             max-width: unset
             height: gem(1553)
             position: absolute
-            bottom: -80vh
+            bottom: -90%
             right: -42%
             opacity: 0
 
@@ -847,6 +953,8 @@ section
     .button
         width: gem(226)
         height: gem(64)
+        position: relative
+        z-index: 3
     .bubbles
         display: flex
         flex-direction: row
@@ -854,6 +962,7 @@ section
         justify-content: space-between
         position: absolute
         bottom: gem(83)
+        z-index: 1
         img
             width: gem(476)
             height: gem(267)
@@ -863,7 +972,7 @@ section
         width: 100%
         content: ''
         height: gem(1)
-        background: linear-gradient(90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
+        background: linear-gradient(-90deg, #725BFF 0%, #00E5CC 52.6%, #30BAFF 100%)
     .bottom-line
         display: flex
         justify-content: space-between
@@ -879,12 +988,32 @@ section
             align-items: center
             a
                 margin: 0 gem(16)
+                display: flex
+                height: 100%
+                svg
+                    display: flex
+                    height: 100%
                 &:first-child
-                    img
+                    svg
                         width: gem(8)
+                        path
+                            fill: #5B637C
+                            transition: all 0.3s ease
+                    &:hover
+                        svg
+                            path
+                                fill: #0080EE
+
                 &:last-child
-                    img
+                    svg
                         width: gem(20)
+                        path
+                            fill: #5B637C
+                            transition: all 0.3s ease
+                    &:hover
+                        svg
+                            path
+                                fill: #30BAFF
         .policy
             display: flex
             flex-direction: row
@@ -892,6 +1021,9 @@ section
             justify-content: flex-end
             a
                 margin-left: gem(20)
+                transition: all 0.3s ease
+                &:hover
+                    color: #725BFF
         a
             display: flex
 

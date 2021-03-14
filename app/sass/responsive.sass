@@ -1,4 +1,6 @@
 @media only screen and (max-width : 768px)
+	.preloader
+		display: none
 	body
 		height: auto
 		overflow: unset
@@ -12,3 +14,302 @@
 		&.invisible
 			opacity: 1
 			pointer-events: unset
+	.header
+		// backdrop-filter: none
+		height: gem(70)
+		padding-top: gem(10)
+		background: linear-gradient(107.56deg,rgba(220, 242, 255, .5) 0,rgba(226, 254, 255, .5) 100%)
+		&-line
+			// display: none
+			&-main
+				width: 100%
+		&-all
+			&-links
+				display: none
+	.opening
+		display: flex
+		flex-direction: column-reverse
+		height: auto
+		padding-bottom: gem(40)
+		background: #fff
+		&-inner
+			height: auto
+		&-anim
+			position: relative
+			margin-top: gem(69)
+			video
+				width: 150%
+				margin-left: -50%
+		&-text
+			padding-left: 0
+			margin-top: gem(10)
+			display: flex
+			flex-direction: column
+			align-items: center
+			h1
+				text-align: center	
+				flex-direction: column
+				align-items: center
+				line-height: gem(30)
+				span
+					text-align: center	
+			p.desc-1
+				text-align: center
+				margin-bottom: gem(30)
+			&-scroll
+				display: none
+
+	.opening-text .button, .opening-text h1, .opening-text p.desc-1
+		opacity: 1
+		transform: none
+	.leveraged
+		&-anim
+			position: relative
+			height: gem(422)
+			video
+				width: 200%
+				margin-left: -52%
+				margin-top: 0
+				bottom: 0
+		&-text
+			height: auto
+			&-main
+				height: auto
+				position: relative
+				padding: 0 gem(22.5)
+				padding-bottom: gem(22)
+				h2.title-h2, p.desc-1
+					opacity: 1
+					transform: none
+				h2.title-h2
+					margin-top: gem(40)
+	.book
+		&-first
+			height: auto
+			flex-direction: column
+			.book-text
+				height: auto
+				position: relative
+				width: 100%
+				padding: gem(70) gem(22.5)
+
+				h2.title-h2
+					opacity: 1
+					transform: none
+					font-size: gem(20)
+					line-height: gem(30)
+					text-align: center
+				p.desc-2
+					opacity: 1
+					transform: none
+					font-size: gem(20)
+					line-height: gem(29)
+					text-align: center
+			.book-pics
+				position: relative
+				height: auto
+				width: 100%
+				padding: 0 gem(22.5)
+				padding-left: gem(50)
+				padding-bottom: gem(45)
+				background: linear-gradient(-90deg,#feffff 0,#f0edf1 100%)
+				&-list
+					li
+						opacity: 1
+						transform: none
+						width: 100%
+						margin-left: 0
+						margin-bottom: 0
+						&:nth-child(1)
+							margin-top: gem(40)
+					&-img
+						width: gem(71)
+	.smart 
+		margin-bottom: gem(1838)
+		&-book
+			flex-direction: column
+			width: 	100%
+		&-text
+			width: 100%
+			position: relative
+			height: auto
+			padding: gem(70) gem(22.5)
+			p
+				opacity: 1
+				transform: unset
+				font-size: gem(20)
+				line-height: gem(29)
+				max-width: 100%
+				width: 100%
+				margin: 0
+			.poly-block
+				position: absolute
+				left: 0
+				background: linear-gradient(135deg, #EBF9FF 25%, #F6F5FE 75%)
+				z-index: 9
+				display: flex
+				width: gem(375)
+				// height: gem(1930)
+				height: auto
+				bottom: gem(-2300)
+				padding: 0 gem(22.5)
+				justify-content: flex-start
+				.smart-img
+					position: relative
+					width: 200%
+					max-width: unset
+					opacity: 1
+					transform: unset
+					margin-left: gem(-70)
+				h2.title-h2
+					opacity: 1
+					transform: none
+					margin-top: gem(40)
+					align-self: flex-start
+				.poly-text
+					opacity: 1
+					flex-direction: column
+					width: 100%
+					margin-top: gem(25)
+					p
+						opacity: 1
+						width: auto
+						transform: none
+						margin-bottom: gem(10)
+				.points
+					position: relative
+					top: unset
+					left: unset
+					width: 100%
+					padding: gem(0)
+					margin-top: gem(30)
+					.point
+						opacity: 1
+						transform: none
+						&-text
+							width: gem(260)
+						&:first-child
+							margin-bottom: gem(40)
+						&:last-child
+							margin-top: 0
+							margin-bottom: gem(40)
+						&:nth-child(2), &:nth-child(4)
+							margin-right: 0
+							margin-bottom: gem(40)
+						&:nth-child(3), &:nth-child(5)
+							margin-left: 0
+							margin-bottom: gem(40)
+		&-pics
+			width: 100%
+			position: relative
+			height: auto
+			padding: 0 gem(22.5)
+			&-list
+				margin-left: gem(50)
+				width: 100%
+				li
+					opacity: 1
+					transform: none
+					width: 100%
+					margin-left: 0
+					margin-bottom: 0
+					&:nth-child(1)
+						margin-top: gem(40)
+				&-img
+					width: gem(71)
+	.power
+		height: auto
+		flex-direction: column
+		position: relative
+		&-card
+			&-wrapper
+				width: 100%
+				padding: gem(40) gem(22.5)
+				background: #fff
+				flex-direction: column
+				align-items: center
+			opacity: 1
+			transform: none
+			margin-bottom: gem(16)
+		&-text
+			position: relative
+			width: 100%
+			height: auto
+			padding: 0 gem(22.5)
+			h2.title-h2
+				margin-top: gem(40)
+				font-size: gem(35)
+				line-height: gem(40)
+			p.title-h2
+				font-size: gem(35)
+				line-height: gem(40)
+			h2.title-h2, p.title-h2, p, h2
+				opacity: 1
+				transform: none
+				width: 100%
+			p.first-text
+				&:nth-child(3)
+					margin-bottom: gem(20)
+		.second-part
+			height: auto
+			position: relative
+			flex-direction: column-reverse
+			img
+				width: 300%
+				position: relative
+				height: auto
+				bottom: unset
+				right: unset
+				opacity: 1
+				right: gem(-180)
+				margin-top: gem(-310)
+				transform: rotate(-32deg)
+			.text-part
+				margin-left: 0
+				width: 100%
+				flex-direction: column
+				margin-top: gem(-310)
+				h2
+					margin-top: 0
+					opacity: 1
+					transform: none
+					font-size: gem(35)
+					line-height: gem(35)
+					margin-bottom: gem(60)
+				p
+					width: 100%
+					margin-right: 0
+					margin-bottom: gem(16)
+	.footer
+		height: auto
+		position: relative
+		padding: gem(70) gem(0) gem(0) gem(0)
+		h2
+			opacity: 1
+			transform: unset
+			margin-top: 0
+			width: 100%
+			padding: 0 gem(22.5)
+		.button
+			opacity: 1
+			transform: unset
+			margin-bottom: gem(40)
+		.bottom
+			&-line
+				flex-wrap: wrap
+				.policy
+					margin-top: gem(20)
+					a
+						margin-left: 0
+						margin-right: gem(20)
+				&-wrapper
+					position: relative
+		.bubbles
+			position: relative
+			bottom: unset
+			img
+				width: gem(130)
+				height: 100%
+				&:last-child
+					width: gem(130)
+			

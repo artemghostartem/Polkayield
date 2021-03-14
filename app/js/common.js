@@ -1,9 +1,19 @@
 $(function() {
+    let isMobile = false
+    if (window.innerWidth < 1024) {
+        isMobile = true
+    }
     //preloader
     loader();
+        if (isMobile) {
+            return;
+        }
         let obj = document.querySelector('.preloader')
         let inner = document.querySelector('.preloader_inner')
         function loader(_success) {
+            if (isMobile) {
+                return;
+            }
             let w = 0
 
             let newInterval = setInterval(function() {
@@ -24,10 +34,7 @@ $(function() {
         }
 
     //global variables
-    let isMobile = false
-    if (window.innerWidth < 1024) {
-        isMobile = true
-    }
+    
     let scrollFromTop
     let scrollableWrapper = document.querySelector('.scrolable-div')
     let scrollPoint = document.querySelector('body').getBoundingClientRect().height / 8
@@ -58,8 +65,34 @@ $(function() {
         smartAnimation();
         powerAnimation();
 		footerAnimation();
+        activeChapter();
     })
-
+    //activeChapter
+    let chapterLine = document.querySelector('.header .bottom-line')
+    let tenPerCent = '200%'
+    let twoperCent = '400%'
+    let threePerCent = '600%'
+    function activeChapter() {
+        
+        if (scrollFromTop < 50) {
+            TweenMax.to(chapterLine, 0.5, { opacity: 0})
+        } else if(scrollFromTop > 50 && scrollFromTop < scrollPoint) {
+            TweenMax.to(chapterLine, 0.5, { opacity: 1,  x:0}) 
+        } else if(scrollFromTop > scrollPoint * 2 && scrollFromTop < scrollPoint * 3) {
+            TweenMax.to(chapterLine, 0.5, { x:0}) 
+        } else if(scrollFromTop > scrollPoint * 3 && scrollFromTop < scrollPoint * 4) {
+            TweenMax.to(chapterLine, 0.5, { x:tenPerCent}) 
+        } else if(scrollFromTop > scrollPoint * 4 && scrollFromTop < scrollPoint * 5) {
+            TweenMax.to(chapterLine, 0.5, { x:tenPerCent}) 
+        } else if(scrollFromTop > scrollPoint * 5 && scrollFromTop < scrollPoint * 6) {
+            TweenMax.to(chapterLine, 0.5, { x:twoperCent}) 
+        }  else if(scrollFromTop > scrollPoint * 6 && scrollFromTop < scrollPoint * 7) {
+            TweenMax.to(chapterLine, 0.5, { opacity: 1, x:threePerCent}) 
+        } else if(scrollFromTop > scrollPoint * 7) {
+            TweenMax.to(chapterLine, 0.5, { opacity: 0}) 
+        }
+        
+    }
     //header-function
     function headerStates() {
         if (scrollFromTop > 50 && scrollFromTop < scrollPoint && !header.classList.contains('light')) {
@@ -194,6 +227,7 @@ $(function() {
     let rems = '2.5rem'
     let sixPerCent = '-6%'
     let onePerCent = '-8%'
+    let oneRem = '1.2rem'
     let imageScrollHeight = windowHeight / 1.3
 
     function smartAnimation() {
@@ -251,7 +285,7 @@ $(function() {
         } else if (scrollFromTop > scrollPoint * 4 && !smart.classList.contains('phase-two')) {
             TweenMax.to(smartPolyTitle, 0.5, { opacity: 0, y: -40, delay: 0 })
             TweenMax.to(smartPolyText, 0.5, { opacity: 0, y: -40, delay: 0.15 })
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 200, x: sixPerCent, delay: 0.3 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: oneRem, x: sixPerCent, delay: 0.3 })
             TweenMax.to(point[0], 0.3, { opacity: 1, y: 0, delay: 0.7 })
             TweenMax.to(point[2], 0.3, { opacity: 1, y: 0, delay: 0.85 })
             TweenMax.to(point[4], 0.3, { opacity: 1, y: 0, delay: 1 })
@@ -262,7 +296,7 @@ $(function() {
             smart.classList.add('phase-two')
 
         } else if (scrollFromTop > scrollPoint * 2 && scrollFromTop < scrollPoint * 5 && smart.classList.contains('invisible')) {
-            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: 200, delay: 0.3 })
+            TweenMax.to(smartImg, 0.5, { opacity: 1, scale: 1, y: oneRem, delay: 0.3 })
             TweenMax.to(point[0], 0.3, { opacity: 1, y: 0, delay: 0.7 })
             TweenMax.to(point[2], 0.3, { opacity: 1, y: 0, delay: 0.85 })
             TweenMax.to(point[4], 0.3, { opacity: 1, y: 0, delay: 1 })
@@ -397,7 +431,7 @@ $(function() {
     let inProgress = false
 
     function findScrollDirectionOtherBrowsers(event) {
-        if (inProgress) {
+        if (inProgress || isMobile) {
             return
         }
         var delta;
@@ -446,49 +480,54 @@ $(function() {
     openingScroll.addEventListener('click', function() {
     	next()
     })
-
-    //header links
-    function chapterSwitch(screenIndex) {
-        inProgress = true
-        let nextScrollPosition = scrollPoint * screenIndex
-        if (screenIndex == 0 ) {
-            TweenMax.to(window, { duration: 2, scrollTo: 0, onComplete: () => { inprogressFalse() } });
-        } else {
-            TweenMax.to(window, { duration: 2, scrollTo: nextScrollPosition, onComplete: () => { inprogressFalse() } });
-        }
-        currentScreen = screenIndex
-    }
-
     let chapterLinks = document.querySelectorAll('.header-all-links a')
+    for(let i = 0; i< 3; i++) {
+        chapterLinks[i].addEventListener('click', function(event){
+             event.preventDefault();
+        })
+    }
+    //header links
+    // function chapterSwitch(screenIndex) {
+    //     inProgress = true
+    //     let nextScrollPosition = scrollPoint * screenIndex
+    //     if (screenIndex == 0 ) {
+    //         TweenMax.to(window, { duration: 3, scrollTo: 0, onComplete: () => { inprogressFalse() } });
+    //     } else {
+    //         TweenMax.to(window, { duration: 3, scrollTo: nextScrollPosition, onComplete: () => { inprogressFalse() } });
+    //     }
+    //     currentScreen = screenIndex
+    // }
 
-    chapterLinks[0].addEventListener('click', function() {
-        if (inProgress || isMobile) {
-            return
-        }
-        chapterSwitch(0)
-        killAllTweens()    
-    });
-    chapterLinks[1].addEventListener('click', function() {
-        if (inProgress || isMobile) {
-            return
-        }
-        chapterSwitch(1)
-        killAllTweens()
-    })
-    chapterLinks[2].addEventListener('click', function() {
-        if (inProgress || isMobile) {
-            return
-        }
-        chapterSwitch(2)
-        killAllTweens()
-    })
-    chapterLinks[3].addEventListener('click', function() {
-        if (inProgress || isMobile) {
-            return
-        }
-        chapterSwitch(3)
-        killAllTweens()
-    })
+    // let chapterLinks = document.querySelectorAll('.header-all-links a')
+
+    // chapterLinks[0].addEventListener('click', function() {
+    //     if (inProgress || isMobile) {
+    //         return
+    //     }
+    //     chapterSwitch(0)
+    //     killAllTweens()    
+    // });
+    // chapterLinks[1].addEventListener('click', function() {
+    //     if (inProgress || isMobile) {
+    //         return
+    //     }
+    //     chapterSwitch(1)
+    //     killAllTweens()
+    // })
+    // chapterLinks[2].addEventListener('click', function() {
+    //     if (inProgress || isMobile) {
+    //         return
+    //     }
+    //     chapterSwitch(2)
+    //     killAllTweens()
+    // })
+    // chapterLinks[3].addEventListener('click', function() {
+    //     if (inProgress || isMobile) {
+    //         return
+    //     }
+    //     chapterSwitch(3)
+    //     killAllTweens()
+    // })
 
     function killAllTweens() {
         TweenMax.set(secondPartImage, {clearProps:"all"});
