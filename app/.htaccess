@@ -1,8 +1,9 @@
 <ifModule mod_expires.c>
 
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R=301,L]
 
 
 # Add correct content-type for fonts
