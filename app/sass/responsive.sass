@@ -26,6 +26,13 @@
 		&-all
 			&-links
 				display: none
+	.powered-main
+		position: relative
+		left: 0
+		margin: auto
+		margin-top: gem(40)
+		opacity: 1
+		transform: translateX(0)
 	.opening
 		display: flex
 		flex-direction: column-reverse
@@ -62,8 +69,15 @@
 				margin-bottom: gem(30)
 			&-scroll
 				display: none
-
-	.opening-text .button, .opening-text h1, .opening-text p.desc-1
+	.buttons-wrapper
+		flex-direction: column
+		.button
+			margin-right: 0
+		.white-button
+			opacity: 1
+			transform: none
+			margin-top: gem(20)
+	.opening-text .button, .opening-text h1, .opening-text p.desc-1, 
 		opacity: 1
 		transform: none
 	.leveraged
@@ -355,12 +369,43 @@
 			width: 100%
 			flex-direction: column
 			align-items: center
-			margin-top: gem(40)
-			margin-bottom: gem(22)
+			margin: 0
+			padding-bottom: gem(60)
+			padding-top: gem(60)
+			&.active
+				overflow: unset
+				padding-bottom: gem(60)
 			.people-card
 				margin-left: gem(0)
 				opacity: 1
 				transform: unset
+				width: 100%
+				&::before
+					width: gem(352)
+					height: gem(164)
+				&::after
+					width: gem(350)
+					height: gem(162)
+				&-wrapper
+					width: gem(350)
+					margin: auto
+					margin-bottom: gem(20)
+					&:nth-child(1)
+						.people-card
+							min-height: gem(182)
+							&::before
+								height: gem(184)
+							&::after
+								height: gem(182)
+				.name, .status, .social
+					margin-left: gem(140)
+					height: auto
+				.people-icon
+					padding: gem(0) gem(54) 0 gem(35)
+					img
+						width: gem(66)
+						margin-top: gem(35)
+				min-height: gem(162)
 
 	.footer
 		height: auto
@@ -394,4 +439,38 @@
 				height: 100%
 				&:last-child
 					width: gem(130)
+	.form 
+		height: 100vh
+		
+		&-right
+			display: none
+		&-left
+			width: 100%
+			height: auto
+			// min-height: 100vh
+			justify-content: flex-start
+			overflow: scroll
+			padding-top: gem(50)
+			form
+				width: 100%
+				// margin-top: gem(20)
+				margin-bottom: gem(50)
+			h2
+				width: 	100%
+				font-size: gem(26)
+				line-height: gem(37)
+			&-top
+				position: relative
+				padding: gem(10) gem(20)
+				justify-content: space-between
+			&-main
+				padding-left: 0
+				
+				width: var(--container-width)
+				margin: auto
+				margin-top: gem(40)
+		.full-logo
+			display: none
+	.succsess
+		width: 100%
 			
